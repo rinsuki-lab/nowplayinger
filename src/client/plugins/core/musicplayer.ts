@@ -4,6 +4,7 @@ export interface IMusicPlayer {
     config: {[key: string]: any}
     getNowplaying: () => Promise<Music | null>
     getDisplayName: () => string
+    getUniqueKey: () => string
 }
 
 interface IMusicPlayerStatic {

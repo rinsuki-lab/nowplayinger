@@ -18,6 +18,10 @@ class ITunesMacPlayer implements IMusicPlayer {
     getDisplayName() {
         return "iTunes (Mac)"
     }
+    
+    getUniqueKey() {
+        return "itunes_mac"
+    }
 }
 
 MusicPlayerManager.addPlayer(ITunesMacPlayer)

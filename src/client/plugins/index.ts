@@ -1,6 +1,6 @@
 // music players
 
-import "./musicplayers/itunes"
+import "./musicplayers/itunesMac"
 // add your created plugins insert here!
 // import "./musicplayers/your-awesome-music-player"
 
