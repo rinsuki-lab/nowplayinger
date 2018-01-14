@@ -1,6 +1,6 @@
 import * as React from "react"
 import Music from "../music";
-import nowplaying from "itunes-nowplaying-mac"
+import config from "../config";
 
 interface Props {
     onChanged: (music: Music) => void
@@ -8,17 +8,23 @@ interface Props {
 
 export default class Source extends React.Component<Props> {
     render() {
+        var options = config.players.map(player => {
+            return <option value={player.toString()}>{player.toString()}</option>
+        })
         return (
-            <button onClick={this.changeEvent.bind(this)}>Reload Music Data</button>
+            <div>
+                <select>
+                    {options}
+                </select>
+                <button onClick={this.changeEvent.bind(this)}>Reload Music Data</button>
+            </div>
         )
     }
     async changeEvent() {
-        const itunes = await nowplaying()
-        if (!itunes) return
-        var music = new Music()
-        music.title = itunes.name
-        music.album = itunes.album.name
-        music.artist = itunes.artist
+        const player = config.players[0]
+        if (!player) return
+        const music = await player.getNowplaying()
+        if (!music) return
         this.props.onChanged(music)
     }
 }
