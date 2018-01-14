@@ -15,7 +15,6 @@ class Config {
             return player
         })
         // TODO: あとでけす
-        console.log(MusicPlayerManager.musicplayers)
         this.players = [
             new MusicPlayerManager.musicplayers.itunes_mac()
         ]

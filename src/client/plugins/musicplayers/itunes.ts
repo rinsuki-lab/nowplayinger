@@ -14,6 +14,10 @@ class ITunesMacPlayer implements IMusicPlayer {
         music.artist = res.artist
         return music
     }
+
+    getDisplayName() {
+        return "iTunes (Mac)"
+    }
 }
 
 MusicPlayerManager.addPlayer(ITunesMacPlayer)

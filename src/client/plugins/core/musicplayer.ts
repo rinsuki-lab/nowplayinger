@@ -3,6 +3,7 @@ import Music from "../../music";
 export interface IMusicPlayer {
     config: {[key: string]: any}
     getNowplaying: () => Promise<Music | null>
+    getDisplayName: () => string
 }
 
 interface IMusicPlayerStatic {

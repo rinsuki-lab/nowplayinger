@@ -9,7 +9,7 @@ interface Props {
 export default class Source extends React.Component<Props> {
     render() {
         var options = config.players.map(player => {
-            return <option value={player.toString()}>{player.toString()}</option>
+            return <option value={player.toString()}>{player.getDisplayName()}</option>
         })
         return (
             <div>
