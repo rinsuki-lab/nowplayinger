@@ -13,6 +13,7 @@ export default class Source extends React.Component<Props> {
         })
         return (
             <div>
+                player: 
                 <select>
                     {options}
                 </select>
