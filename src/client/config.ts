@@ -14,6 +14,13 @@ class Config {
             player.config = player_config.config
             this.players[player.getUniqueKey()] = player
         })
+        const worlds = ((config.worlds || []) as {key: string, config: {[key: string]: any}}[])
+        worlds.filter(world_config => {
+            const world_class = WorldManager.worlds[world_config.key]
+            const world = new world_class()
+            world.config = world_config
+            this.worlds[world.getUniqueKey()] = world
+        })
         // TODO: あとでけす
         const test_players = [
             new MusicPlayerManager.musicplayers.itunes_mac() as IMusicPlayer,
@@ -22,11 +29,10 @@ class Config {
         test_players.forEach(player => {
             this.players[player.getUniqueKey()] = player
         })
-        const worlds = ((config.worlds || []) as {key: string, config: {[key: string]: any}}[])
-        worlds.filter(world_config => {
-            const world_class = WorldManager.worlds[world_config.key]
-            const world = new world_class()
-            world.config = world_config
+        const test_worlds = [
+            new WorldManager.worlds.fake() as IWorld
+        ]
+        test_worlds.forEach(world => {
             this.worlds[world.getUniqueKey()] = world
         })
     }

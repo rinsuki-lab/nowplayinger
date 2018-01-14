@@ -8,5 +8,6 @@ import "./musicplayers/fake"
 // worlds
 
 import "./worlds/twitter"
+import "./worlds/fake"
 // add your created plugins insert here!
 // import "./worlds/your-awesome-sns"
