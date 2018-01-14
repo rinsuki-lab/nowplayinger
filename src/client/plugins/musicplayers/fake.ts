@@ -17,7 +17,7 @@ class FakePlayer implements IMusicPlayer {
     }
     
     getUniqueKey() {
-        return "itunes_mac"
+        return "fake"
     }
 }
 

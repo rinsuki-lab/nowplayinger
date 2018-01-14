@@ -3,24 +3,27 @@ import { IWorld, WorldManager } from "./plugins/core/world";
 import "./plugins"
 
 class Config {
-    players: IMusicPlayer[]
-    worlds: IWorld[]
+    players: {[key: string]: IMusicPlayer} = {}
+    worlds: {[key: string]: IWorld} = {}
     constructor() {
         const config: any = JSON.parse(localStorage.getItem("nowplayinger.config") || "{}")
         const players = ((config.players || []) as {key: string, config: {[key: string]: any}}[])
-        this.players = players.map(player_config => {
+        players.filter(player_config => {
             const player_class = MusicPlayerManager.musicplayers[player_config.key]
             const player = new player_class()
             player.config = player_config.config
-            return player
+            this.players[player.getUniqueKey()] = player
         })
         // TODO: あとでけす
-        this.players = [
-            new MusicPlayerManager.musicplayers.itunes_mac(),
-            new MusicPlayerManager.musicplayers.fake()
+        const test_players = [
+            new MusicPlayerManager.musicplayers.itunes_mac() as IMusicPlayer,
+            new MusicPlayerManager.musicplayers.fake() as IMusicPlayer,
         ]
+        test_players.forEach(player => {
+            this.players[player.getUniqueKey()] = player
+        })
         const worlds = ((config.worlds || []) as {key: string, config: {[key: string]: any}}[])
-        this.worlds = worlds.map(world_config => {
+        worlds.map(world_config => {
             const world_class = WorldManager.worlds[world_config.key]
             const world = new world_class()
             world.config = world_config
