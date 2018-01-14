@@ -1,0 +1,42 @@
+{
+  "name": "nowplayinger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rinsuki/nowplayinger.git"
+  },
+  "author": "rinsuki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rinsuki/nowplayinger/issues"
+  },
+  "homepage": "https://github.com/rinsuki/nowplayinger#readme",
+  "devDependencies": {
+    "@types/electron": "^1.6.10",
+    "@types/gulp": "^4.0.5",
+    "@types/gulp-typescript": "^2.13.0",
+    "@types/menubar": "^5.1.6",
+    "@types/react": "^16.0.34",
+    "@types/react-dom": "^16.0.3",
+    "@types/webpack-stream": "^3.2.8",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^4.0.0-alpha.1",
+    "ts-loader": "^3.2.0",
+    "ts-node": "^4.1.0",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
+    "webpack-stream": "^4.0.0"
+  },
+  "dependencies": {
+    "itunes-nowplaying-mac": "^0.2.3",
+    "menubar": "^5.2.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
