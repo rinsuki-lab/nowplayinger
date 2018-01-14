@@ -13,7 +13,7 @@ interface State {
 export default class Source extends React.Component<Props, State> {
     render() {
         var options = Object.values(config.players).map(player => {
-            return <option value={player.getUniqueKey()}>{player.getDisplayName()}</option>
+            return <option value={player.getUniqueKey()} key={player.getUniqueKey()}>{player.getDisplayName()}</option>
         })
         return (
             <div>
