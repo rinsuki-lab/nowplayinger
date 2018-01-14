@@ -2,6 +2,7 @@ export interface IWorld {
     config: {[key: string]: any}
     post: (content: string) => Promise<void>
     getUniqueKey: () => string
+    getDisplayName: () => string
 }
 
 interface IWorldStatic {

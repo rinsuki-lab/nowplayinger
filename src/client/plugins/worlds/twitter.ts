@@ -20,6 +20,10 @@ class TwitterWorld implements IWorld {
     getUniqueKey() {
         return "twitter_"+this.config.screenName
     }
+
+    getDisplayName() {
+        return this.config.screenName+"@twitter.com"
+    }
 }
 
 WorldManager.addWorld(TwitterWorld)

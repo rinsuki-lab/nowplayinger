@@ -9,6 +9,10 @@ class FakeWorld implements IWorld {
     getUniqueKey() {
         return "fake"
     }
+
+    getDisplayName() {
+        return "fake world"
+    }
 }
 
 WorldManager.addWorld(FakeWorld)
