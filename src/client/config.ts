@@ -23,11 +23,11 @@ class Config {
             this.players[player.getUniqueKey()] = player
         })
         const worlds = ((config.worlds || []) as {key: string, config: {[key: string]: any}}[])
-        worlds.map(world_config => {
+        worlds.filter(world_config => {
             const world_class = WorldManager.worlds[world_config.key]
             const world = new world_class()
             world.config = world_config
-            return world
+            this.worlds[world.getUniqueKey()] = world
         })
     }
 }

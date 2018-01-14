@@ -1,6 +1,7 @@
 export interface IWorld {
     config: {[key: string]: any}
     post: (content: string) => Promise<void>
+    getUniqueKey: () => string
 }
 
 interface IWorldStatic {

@@ -16,6 +16,10 @@ class TwitterWorld implements IWorld {
     async post(content: string) {
         console.log("WIP: なんかする")
     }
+
+    getUniqueKey() {
+        return "twitter_"+this.config.screenName
+    }
 }
 
 WorldManager.addWorld(TwitterWorld)
