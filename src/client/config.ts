@@ -16,7 +16,8 @@ class Config {
         })
         // TODO: あとでけす
         this.players = [
-            new MusicPlayerManager.musicplayers.itunes_mac()
+            new MusicPlayerManager.musicplayers.itunes_mac(),
+            new MusicPlayerManager.musicplayers.fake()
         ]
         const worlds = ((config.worlds || []) as {key: string, config: {[key: string]: any}}[])
         this.worlds = worlds.map(world_config => {
