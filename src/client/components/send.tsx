@@ -29,7 +29,7 @@ export default class Send extends React.Component<Props, State> {
                 <select onChange={this.onChangeWorld.bind(this)}>
                     {options}
                 </select>
-                <button disabled={!this.props.music || this.state.isPosting} onClick={this.onClick.bind(this)}>Send!</button>
+                <button className="sendButton" disabled={!this.props.music || this.state.isPosting} onClick={this.onClick.bind(this)}>Send!</button>
             </div>
         )
     }

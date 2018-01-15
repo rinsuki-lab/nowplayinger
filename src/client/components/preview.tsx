@@ -17,7 +17,7 @@ export default class Preview extends React.Component<Props> {
         return (
             <div>
                 <h2>{this.props.music.title}</h2>
-                <span>{this.props.music.artist} ─ {this.props.music.album}</span>
+                <span>{this.props.music.artist}&nbsp; ─ &nbsp;{this.props.music.album}</span>
             </div>
         )
     }

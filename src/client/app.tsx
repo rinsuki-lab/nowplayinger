@@ -13,6 +13,8 @@ interface Props {
 
 }
 
+import "./app.css"
+
 export default class App extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props)
@@ -22,12 +24,18 @@ export default class App extends React.Component<Props, State> {
     }
     render() {
         return (
-            <div>
-                <h1>NowPlaying</h1>
-                <Settings />
-                <Source onChanged={this.updateMusic.bind(this)}/>
-                <Preview music={this.state.music}/>
-                <Send music={this.state.music}/>
+            <div className="parent">
+                <div className="header"><div>
+                    <h1>NowPlaying</h1>
+                    <Settings />
+                    <Source onChanged={this.updateMusic.bind(this)}/>
+                </div></div>
+                <div className="main">
+                    <Preview music={this.state.music}/>
+                </div>
+                <div className="footer">
+                    <Send music={this.state.music}/>
+                </div>
             </div>
         )
     }

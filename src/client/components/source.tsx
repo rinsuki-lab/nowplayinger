@@ -1,6 +1,7 @@
 import * as React from "react"
 import Music from "../music";
 import config from "../config";
+import * as FontAwesome from "react-fontawesome"
 
 interface Props {
     onChanged: (music: Music) => void
@@ -17,11 +18,10 @@ export default class Source extends React.Component<Props, State> {
         })
         return (
             <div>
-                player: 
                 <select onChange={this.onChangePlayer.bind(this)}>
                     {options}
                 </select>
-                <button onClick={this.changeEvent.bind(this)}>Reload Music Data</button>
+                <button onClick={this.changeEvent.bind(this)}><FontAwesome name="refresh"/></button>
             </div>
         )
     }

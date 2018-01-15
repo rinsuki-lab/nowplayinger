@@ -1,11 +1,12 @@
 {
   "name": "nowplayinger",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp"
+    "build": "gulp",
+    "package:mac": "electron-packager . nowplayinger --platform=darwin --arch=x64 --version=1.7.10 --ignore='/src' --out=buildBinary"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "@types/react-fontawesome": "^1.6.1",
     "@types/webpack-stream": "^3.2.8",
     "css-loader": "^0.28.8",
+    "electron": "^1.7.10",
     "file-loader": "^1.1.6",
     "font-awesome": "github:FortAwesome/Font-Awesome#v4.7.0",
     "gulp": "^3.9.1",

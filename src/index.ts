@@ -6,9 +6,11 @@ const mb = menubar({
     dir: __dirname,
     index: "file://" + join(__dirname, "client", "index.html"),
     width: 320,
-    height: 350,
+    minWidth: 320,
+    maxWidth: 360,
+    height: 450,
     hasShadow: true,
-    resizable: false,
+    resizable: true,
     transparent: true,
 })
 

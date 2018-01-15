@@ -3,7 +3,7 @@ import * as React from "react"
 export default class ModalDialog extends React.Component {
     render() {
         return <div style={{
-            backgroundColor: "rgba(0,0,0,0.8)",
+            backgroundColor: "rgba(0,0,0,0.3)",
             position: "fixed",
             width: "100vw",
             height: "100vh",
@@ -16,6 +16,7 @@ export default class ModalDialog extends React.Component {
         }}>
             <div style={{
                 backgroundColor: "white",
+                color: "black",
                 padding: "1em"
             }}>
                 {this.props.children}
