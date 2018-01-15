@@ -34,6 +34,7 @@ class MastodonWorld implements IWorld {
                 client_name: "nowplayinger",
                 scopes: "read write",
                 redirect_uris: "urn:ietf:wg:oauth:2.0:oob",
+                website: "https://github.com/rinsuki/nowplayinger"
             }),
             headers: {
                 "Content-Type": "application/json"
