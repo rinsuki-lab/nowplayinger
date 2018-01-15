@@ -1,40 +1,19 @@
-export default function prompt(message: string, defaultValue: string) {
-    var wrapper = document.createElement("div")
-    wrapper.style.backgroundColor = "rgba(0,0,0,0.8)"
-    wrapper.style.position = "fixed"
-    wrapper.style.width = "100vw"
-    wrapper.style.height = "100vh"
-    wrapper.style.zIndex = "999999"
-    wrapper.style.top = "0"
-    wrapper.style.left = "0"
-    wrapper.style.display = "flex"
-    wrapper.style.justifyContent = "center"
-    wrapper.style.alignItems = "center"
-    document.body.appendChild(wrapper)
+import * as React from "react"
+import * as ReactDOM from "react-dom";
+import PromptDialog from "../components/dialogs/prompt";
 
-    var dialog = document.createElement("div")
-    dialog.style.backgroundColor = "white"
-    dialog.style.padding = "1em"
-    wrapper.appendChild(dialog)
-
-    var title = document.createElement("div")
-    title.style.padding = "1em"
-    title.innerText = message
-    dialog.appendChild(title)
-
-    var input = document.createElement("input")
-    input.style.minWidth = "15em"
-    input.value = defaultValue || ""
-    dialog.appendChild(input)
-
-    var button = document.createElement("button")
-    button.innerText = "OK"
-    dialog.appendChild(button)
-
-    return new Promise((resolve, reject) => {
-        button.onclick = () => {
-            document.body.removeChild(wrapper)
-            resolve(input.value)
-        }
+export default function prompt(message: string, defaultValue: string = "") {
+    return new Promise<string | null>((resolve, reject) => {
+        var root = document.createElement("div")
+        document.body.appendChild(root)
+        ReactDOM.render(React.createElement(PromptDialog, {
+            title: message,
+            defaultValue,
+            callback: (result: string | null) => {
+                ReactDOM.unmountComponentAtNode(root)
+                root.remove()
+                resolve(result)
+            }
+        }), root)
     })
 }

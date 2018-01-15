@@ -5,9 +5,10 @@ export interface IWorld {
     getDisplayName: () => string
 }
 
-interface IWorldStatic {
+export interface IWorldStatic {
     new (): IWorld
     key: string
+    auth: () => Promise<IWorld | undefined>
 }
 
 export class WorldManager {

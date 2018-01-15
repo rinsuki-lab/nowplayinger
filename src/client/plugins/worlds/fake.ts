@@ -13,6 +13,10 @@ class FakeWorld implements IWorld {
     getDisplayName() {
         return "fake world"
     }
+
+    static async auth() {
+        return new FakeWorld()
+    }
 }
 
 WorldManager.addWorld(FakeWorld)

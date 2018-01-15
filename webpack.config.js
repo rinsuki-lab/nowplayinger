@@ -5,7 +5,8 @@ module.exports = {
     output: {
         filename: "bundle.js",
         path: path.join(__dirname, "dist/client/webpack"),
-        libraryTarget: "commonjs2"
+        libraryTarget: "commonjs2",
+        publicPath: "webpack/",
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js"]
@@ -13,6 +14,8 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.tsx?$/, loader: "ts-loader" },
+            { test: /\.css?$/, loader: "style-loader!css-loader"},
+            { test: /\.(svg|ttf|otf|eot|woff2?)$/, loader: "file-loader"},
         ]
     },
     externals: [{
