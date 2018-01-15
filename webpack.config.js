@@ -16,6 +16,8 @@ module.exports = {
         ]
     },
     externals: [{
-        "itunes-nowplaying-mac": "itunes-nowplaying-mac"
+        "itunes-nowplaying-mac": "itunes-nowplaying-mac",
+        "crypto": "crypto",
+        "electron": "electron",
     }]
 }

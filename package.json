@@ -27,6 +27,8 @@
     "@types/webpack-stream": "^3.2.8",
     "gulp": "^3.9.1",
     "gulp-typescript": "^4.0.0-alpha.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "ts-loader": "^3.2.0",
     "ts-node": "^4.1.0",
     "typescript": "^2.6.2",
@@ -36,7 +38,6 @@
   "dependencies": {
     "itunes-nowplaying-mac": "^0.2.3",
     "menubar": "^5.2.3",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "oauth-1.0a": "github:ddo/oauth-1.0a"
   }
 }

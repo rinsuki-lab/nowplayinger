@@ -30,7 +30,8 @@ class Config {
             this.players[player.getUniqueKey()] = player
         })
         const test_worlds = [
-            new WorldManager.worlds.fake() as IWorld
+            new WorldManager.worlds.fake() as IWorld,
+            new WorldManager.worlds.twitter() as IWorld
         ]
         test_worlds.forEach(world => {
             this.worlds[world.getUniqueKey()] = world
