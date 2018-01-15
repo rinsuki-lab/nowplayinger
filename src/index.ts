@@ -14,7 +14,7 @@ const mb = menubar({
     transparent: true,
 })
 
-if (process.env.NODE_ENV != "production") {
+if (process.env.NODE_ENV == "development") {
     app.on("ready", () => {
         var window = new BrowserWindow()
         window.loadURL("file://"+join(__dirname, "client", "index.html"))
