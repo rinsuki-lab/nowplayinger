@@ -26,6 +26,11 @@ body {
     top: 0.5em;
     right:1em;
 }
+.header .closeButton {
+    position: absolute;
+    top: 0.5em;
+    left: 1em;
+}
 
 .main {
     flex: 3;

@@ -1,4 +1,4 @@
-import { app, Tray, BrowserWindow } from "electron"
+import { app, Tray, BrowserWindow, ipcMain } from "electron"
 import * as menubar from "menubar"
 import { join } from "path";
 
@@ -14,9 +14,16 @@ const mb = menubar({
     transparent: true,
 })
 
-app.on("ready", () => {
-    var window = new BrowserWindow()
-    window.loadURL("file://"+join(__dirname, "client", "index.html"))
-    window.show()
-    window.webContents.openDevTools()
+if (process.env.NODE_ENV != "production") {
+    app.on("ready", () => {
+        var window = new BrowserWindow()
+        window.loadURL("file://"+join(__dirname, "client", "index.html"))
+        window.show()
+        window.webContents.openDevTools()
+    })
+}
+
+ipcMain.on("quit-app", () => {
+    console.log("quit app")
+    app.quit()
 })
