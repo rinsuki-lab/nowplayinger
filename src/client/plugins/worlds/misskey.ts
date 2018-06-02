@@ -1,7 +1,6 @@
 import { IWorld, WorldManager } from "../core/world";
 import * as crypto from "crypto"
 import prompt from "../../utils/promptPromise";
-import requestOAuth from "../../utils/requestOAuth";
 import openUrl from "../../utils/openUrlDialogPromise";
 
 class MisskeyWorld implements IWorld {
