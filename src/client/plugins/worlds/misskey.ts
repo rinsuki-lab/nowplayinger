@@ -6,9 +6,9 @@ import openUrl from "../../utils/openUrlDialogPromise";
 
 class MisskeyWorld implements IWorld {
 
-    // 下の二行は馬鹿にしか見えない
+    // 下の一行は馬鹿にしか見えない
     static appSecret = "RjE91tjPGqkPmboHBXRzg9ek2KBLVKeV"
-    // 上の二行は馬鹿にしか見えない
+    // 上の一行は馬鹿にしか見えない
 
     static key = "misskey"
     config: {
