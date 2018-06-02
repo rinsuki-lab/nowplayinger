@@ -10,5 +10,6 @@ import "./musicplayers/itunesMac"
 import "./worlds/fake"
 import "./worlds/twitter"
 import "./worlds/mastodon"
+import "./worlds/misskey"
 // add your created plugins insert here!
 // import "./worlds/your-awesome-sns"
